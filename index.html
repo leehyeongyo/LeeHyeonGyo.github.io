@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이현교 | Actor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f5f0e8;
+      color: #1a1a1a;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+
+    /* 네비게이션 */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 60px;
+      background: linear-gradient(to bottom, #f5f0e8, transparent);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    /* 햄버거 메뉴 (모바일용) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: #1a1a1a;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #f5f0e8;
+      z-index: 99;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 28px;
+      cursor: pointer;
+      opacity: 0.5;
+      background: none;
+      border: none;
+      color: #1a1a1a;
+    }
+
+    /* 히어로 */
+    #home {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('hero.jpg') center/cover no-repeat;
+      opacity: 0.25;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 500;
+      letter-spacing: 12px;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      opacity: 0.3;
+      text-transform: uppercase;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 60px;
+    }
+
+    /* About */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 60px;
+    }
+
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: sepia(8%);
+    }
+
+    .about-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
+
+    .about-text p {
+      font-size: 14px;
+      line-height: 2;
+      opacity: 0.7;
+      margin-bottom: 40px;
+    }
+
+    .profile-table { border-top: 1px solid rgba(26,26,26,0.12); }
+
+    .profile-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(26,26,26,0.12);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .profile-row span:first-child {
+      opacity: 0.45;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    /* Gallery */
+    #gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 60px;
+    }
+
+    .gallery-main {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .gallery-main img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: top;
+      filter: sepia(5%);
+      transition: filter 0.4s;
+    }
+
+    .gallery-main img:hover { filter: sepia(0%); }
+
+    .gallery-sub {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-sub-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .gallery-sub-item img {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      filter: sepia(5%);
+      transition: filter 0.4s, transform 0.4s;
+    }
+
+    .gallery-sub-item img:hover {
+      filter: sepia(0%);
+      transform: scale(1.02);
+    }
+
+    .gallery-sub-label {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.45;
+    }
+
+    /* Videos */
+    #videos {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 60px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .video-item iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+
+    .video-info { margin-top: 16px; }
+
+    .video-title {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .video-desc {
+      font-size: 13px;
+      line-height: 1.8;
+      opacity: 0.6;
+    }
+
+    /* Contact */
+    #contact {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 60px;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+    }
+
+    #contact p {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      opacity: 0.45;
+      margin-bottom: 50px;
+    }
+
+    .contact-email {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(26,26,26,0.3);
+      padding-bottom: 4px;
+      letter-spacing: 3px;
+      transition: opacity 0.3s;
+    }
+
+    .contact-email:hover { opacity: 0.5; }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      opacity: 0.25;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(26,26,26,0.08);
+    }
+
+    /* ========================
+       모바일 반응형 (768px 이하)
+    ======================== */
+    @media (max-width: 768px) {
+
+      /* 네비 */
+      nav { padding: 24px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      /* 히어로 */
+      .hero-name {
+        font-size: 42px;
+        letter-spacing: 8px;
+      }
+
+      .hero-subtitle {
+        font-size: 11px;
+        letter-spacing: 4px;
+      }
+
+      /* About */
+      #about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 24px;
+      }
+
+      .about-text h2 { font-size: 34px; }
+      .about-text p { font-size: 13px; }
+
+      /* Gallery */
+      #gallery { padding: 80px 24px; }
+
+      .gallery-main img { aspect-ratio: 4/5; }
+
+      .gallery-sub {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      /* Videos */
+      #videos { padding: 80px 24px; }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      /* Contact */
+      #contact { padding: 80px 24px; }
+
+      #contact h2 {
+        font-size: 38px;
+        letter-spacing: 4px;
+      }
+
+      .contact-email { font-size: 18px; }
+    }
+
+    /* 태블릿 (769px ~ 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+
+      nav { padding: 26px 40px; }
+
+      .hero-name {
+        font-size: 60px;
+        letter-spacing: 10px;
+      }
+
+      #about {
+        gap: 50px;
+        padding: 100px 40px;
+      }
+
+      .about-text h2 { font-size: 38px; }
+
+      #gallery { padding: 100px 40px; }
+
+      .gallery-sub { grid-template-columns: repeat(4, 1fr); }
+
+      #videos {
+        padding: 100px 40px;
+      }
+
+      .video-grid { gap: 30px; }
+
+      #contact { padding: 100px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 네비게이션 -->
+  <nav>
+    <div class="logo">이현교</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="openMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- 모바일 메뉴 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#gallery" onclick="closeMenu()">Gallery</a>
+    <a href="#videos" onclick="closeMenu()">Videos</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+
+  <!-- 히어로 -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-name">이현교</h1>
+      <p class="hero-subtitle">Actor · 배우</p>
+    </div>
+    <p class="scroll-hint">scroll</p>
+  </section>
+
+  <!-- About -->
+  <div id="about">
+    <div class="about-image">
+      <img src="메인.jpg" alt="프로필 사진">
+    </div>
+    <div class="about-text">
+      <p class="section-label">About</p>
+      <h2>진심을 담은<br>연기를 합니다</h2>
+      <p>안녕하세요.<br>2001년생 배우 이현교입니다. 다양한 분야에서 연기로 저를 표현하며 성장하고 있습니다. 잘 부탁 드립니다!</p>
+      <div class="profile-table">
+        <div class="profile-row"><span>신장</span><span>175cm</span></div>
+        <div class="profile-row"><span>체중</span><span>62kg</span></div>
+        <div class="profile-row"><span>특기</span><span>글쓰기, 수영, 요리 </span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <div id="gallery">
+    <div class="gallery-sub">
+      <div class="gallery-sub-item">
+        <img src="정면.jpg" alt="정면">
+        <span class="gallery-sub-label">정면</span>
+      </div>
+      <div class="gallery-sub-item">
+        <img src="좌측.jpg" alt="좌측면">
+        <span class="gallery-sub-label">좌측면</span>
+      </div>
+      <div class="gallery-sub-item">
+        <img src="우측.jpg" alt="우측면">
+        <span class="gallery-sub-label">우측면</span>
+      </div>
+      <div class="gallery-sub-item">
+        <img src="전신.jpg" alt="전신">
+        <span class="gallery-sub-label">전신</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Videos -->
+  <div id="videos">
+    <p class="section-label">Videos</p>
+    <div class="video-grid">
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/35pyrxkKbzE" allowfullscreen></iframe>
+        <div class="video-info">
+          <p class="video-title"><버닝> 유아인 </p>
+          <p class="video-desc">원테이크로 하나의 대본을 두개의 캐릭터로 연기해봤습니다.</p>
+        </div>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/62oVXbnwl4I" allowfullscreen></iframe>
+        <div class="video-info">
+          <p class="video-title">이미지</p>
+          <p class="video-desc">제 이미지에 어울리는 대본을 창작하여 연기해봤습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact">
+    <p class="section-label">Contact</p>
+    <h2>함께 만들어요</h2>
+    <p>casting · collaboration · inquiry</p>
+    <a href="mailto:dlgusry77@naver.com" class="contact-email">dlgusry77@naver.com</a>
+
+<div style="margin-top: 30px;">
+  <a href="https://www.instagram.com/kyo_zipp/" target="_blank" style="
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+    @kyo_zipp
+  </a>
+</div>
+
+  <footer>
+    <p>© 2026 이현교. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.add('open');
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>
