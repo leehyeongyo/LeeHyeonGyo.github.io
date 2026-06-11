@@ -218,6 +218,56 @@
       font-weight: 500;
     }
 
+    /* Career / 경력 사항 */
+    #career {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 60px;
+    }
+
+    .career-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 70px;
+    }
+
+    .career-category { margin-bottom: 60px; }
+    .career-category:last-child { margin-bottom: 0; }
+
+    .career-cat-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(26,26,26,0.25);
+    }
+
+    .career-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(26,26,26,0.1);
+    }
+
+    .career-title {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .career-role {
+      font-size: 13px;
+      letter-spacing: 1px;
+      opacity: 0.6;
+      text-align: right;
+    }
+
     /* Gallery */
     #gallery {
       max-width: 1200px;
@@ -359,6 +409,8 @@
       border-top: 1px solid rgba(26,26,26,0.08);
     }
 
+    .visitor-count { margin-top: 14px; }
+
     /* ========================
        모바일 반응형 (768px 이하)
     ======================== */
@@ -389,6 +441,20 @@
 
       .about-text h2 { font-size: 34px; }
       .about-text p { font-size: 13px; }
+
+      /* Career */
+      #career { padding: 80px 24px; }
+      .career-heading { font-size: 34px; margin-bottom: 50px; }
+      .career-cat-title { font-size: 20px; }
+
+      .career-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .career-role {
+        text-align: left;
+        opacity: 0.5;
+      }
 
       /* Gallery */
       #gallery { padding: 80px 24px; }
@@ -436,6 +502,8 @@
 
       .about-text h2 { font-size: 38px; }
 
+      #career { padding: 100px 40px; }
+
       #gallery { padding: 100px 40px; }
 
       .gallery-sub { grid-template-columns: repeat(4, 1fr); }
@@ -457,6 +525,7 @@
     <div class="logo">이현교</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#career">Career</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#videos">Videos</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -470,6 +539,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
     <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#career" onclick="closeMenu()">Career</a>
     <a href="#gallery" onclick="closeMenu()">Gallery</a>
     <a href="#videos" onclick="closeMenu()">Videos</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
@@ -498,6 +568,56 @@
         <div class="profile-row"><span>신장</span><span>175cm</span></div>
         <div class="profile-row"><span>체중</span><span>62kg</span></div>
         <div class="profile-row"><span>특기</span><span>글쓰기, 수영, 요리 </span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Career / 경력 사항 -->
+  <!-- ▼▼▼ 아래 각 .career-row 한 줄이 작품 하나입니다.
+       작품명(career-title) / 배역·역할(career-role) 순서로 수정하세요.
+       줄을 통째로 복사·붙여넣기 하면 작품을 늘릴 수 있고, 삭제하면 줄어듭니다. ▼▼▼ -->
+  <div id="career">
+    <p class="section-label">Career</p>
+    <h2 class="career-heading">경력 사항</h2>
+
+    <!-- 영화 -->
+    <div class="career-category">
+      <h3 class="career-cat-title">Film · 영화</h3>
+      <div class="career-list">
+        <div class="career-row">
+          <span class="career-title">단편영화 「작품 제목」</span>
+          <span class="career-role">주연 · 배역명</span>
+        </div>
+        <div class="career-row">
+          <span class="career-title">독립영화 「작품 제목」</span>
+          <span class="career-role">조연 · 배역명</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 드라마 -->
+    <div class="career-category">
+      <h3 class="career-cat-title">Drama · 드라마</h3>
+      <div class="career-list">
+        <div class="career-row">
+          <span class="career-title">웹드라마 「작품 제목」</span>
+          <span class="career-role">조연 · 배역명</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 기타 (연극 · 광고 · 뮤직비디오 등) -->
+    <div class="career-category">
+      <h3 class="career-cat-title">Etc · 기타</h3>
+      <div class="career-list">
+        <div class="career-row">
+          <span class="career-title">연극 「작품 제목」</span>
+          <span class="career-role">역할</span>
+        </div>
+        <div class="career-row">
+          <span class="career-title">광고 · 뮤직비디오 「작품 제목」</span>
+          <span class="career-role">출연</span>
+        </div>
       </div>
     </div>
   </div>
@@ -531,7 +651,7 @@
       <div class="video-item">
         <iframe src="https://www.youtube.com/embed/35pyrxkKbzE" allowfullscreen></iframe>
         <div class="video-info">
-          <p class="video-title"><버닝> 유아인 </p>
+          <p class="video-title">&lt;버닝&gt; 유아인 </p>
           <p class="video-desc">원테이크로 하나의 대본을 두개의 캐릭터로 연기해봤습니다.</p>
         </div>
       </div>
@@ -552,31 +672,34 @@
     <p>casting · collaboration · inquiry</p>
     <a href="mailto:dlgusry77@naver.com" class="contact-email">dlgusry77@naver.com</a>
 
-<div style="margin-top: 30px;">
-  <a href="https://www.instagram.com/kyo_zipp/" target="_blank" style="
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.5;
-    transition: opacity 0.3s;
-  " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-    </svg>
-    @kyo_zipp
-  </a>
-</div>
+    <div style="margin-top: 30px;">
+      <a href="https://www.instagram.com/kyo_zipp/" target="_blank" style="
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #1a1a1a;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+      " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        @kyo_zipp
+      </a>
+    </div>
+  </div>
 
   <footer>
     <p>© 2026 이현교. All rights reserved.</p>
+    <!-- 방문자 수 (숫자만 깔끔하게 표시) -->
+    <p class="visitor-count">방문자 · <span id="visits">—</span></p>
   </footer>
 
   <script>
@@ -586,7 +709,15 @@
     function closeMenu() {
       document.getElementById('mobileMenu').classList.remove('open');
     }
+    /* 방문자 카운터 콜백: 받은 숫자를 화면에 천 단위 콤마로 표시 */
+    function cb(res) {
+      var el = document.getElementById('visits');
+      if (el && res && typeof res.value !== 'undefined') {
+        el.innerText = new Intl.NumberFormat('ko-KR').format(res.value);
+      }
+    }
   </script>
+  <script async src="https://abacus.jasoncameron.dev/hit/dlgusry77-portfolieirdyyaaao58552/visits?callback=cb"></script>
 
 </body>
 </html>
