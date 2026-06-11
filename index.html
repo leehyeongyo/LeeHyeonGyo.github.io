@@ -7,14 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       background-color: #f5f0e8;
       color: #1a1a1a;
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
     }
-
     /* 네비게이션 */
     nav {
       position: fixed;
@@ -26,7 +24,6 @@
       padding: 30px 60px;
       background: linear-gradient(to bottom, #f5f0e8, transparent);
     }
-
     .logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px;
@@ -34,13 +31,11 @@
       letter-spacing: 4px;
       text-transform: uppercase;
     }
-
     .nav-links {
       display: flex;
       gap: 40px;
       list-style: none;
     }
-
     .nav-links a {
       color: #1a1a1a;
       text-decoration: none;
@@ -51,9 +46,7 @@
       opacity: 0.6;
       transition: opacity 0.3s;
     }
-
     .nav-links a:hover { opacity: 1; }
-
     /* 햄버거 메뉴 (모바일용) */
     .hamburger {
       display: none;
@@ -62,7 +55,6 @@
       cursor: pointer;
       padding: 4px;
     }
-
     .hamburger span {
       display: block;
       width: 24px;
@@ -70,7 +62,6 @@
       background: #1a1a1a;
       transition: all 0.3s;
     }
-
     .mobile-menu {
       display: none;
       position: fixed;
@@ -82,9 +73,7 @@
       align-items: center;
       gap: 40px;
     }
-
     .mobile-menu.open { display: flex; }
-
     .mobile-menu a {
       color: #1a1a1a;
       text-decoration: none;
@@ -94,7 +83,6 @@
       text-transform: uppercase;
       opacity: 0.7;
     }
-
     .mobile-menu-close {
       position: absolute;
       top: 30px;
@@ -106,7 +94,6 @@
       border: none;
       color: #1a1a1a;
     }
-
     /* 히어로 */
     #home {
       height: 100vh;
@@ -118,16 +105,13 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero-bg {
       position: absolute;
       inset: 0;
       background: url('hero.jpg') center/cover no-repeat;
       opacity: 0.25;
     }
-
     .hero-content { position: relative; z-index: 1; }
-
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 80px;
@@ -137,7 +121,6 @@
       line-height: 1;
       margin-bottom: 20px;
     }
-
     .hero-subtitle {
       font-size: 12px;
       font-weight: 500;
@@ -145,7 +128,6 @@
       text-transform: uppercase;
       opacity: 0.55;
     }
-
     .scroll-hint {
       position: absolute;
       bottom: 40px;
@@ -155,7 +137,6 @@
       opacity: 0.3;
       text-transform: uppercase;
     }
-
     .section-label {
       font-size: 10px;
       font-weight: 500;
@@ -164,7 +145,6 @@
       opacity: 0.4;
       margin-bottom: 60px;
     }
-
     /* About */
     #about {
       display: grid;
@@ -175,14 +155,12 @@
       margin: 0 auto;
       padding: 120px 60px;
     }
-
     .about-image img {
       width: 100%;
       aspect-ratio: 3/4;
       object-fit: cover;
       filter: sepia(8%);
     }
-
     .about-text h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 48px;
@@ -190,16 +168,13 @@
       margin-bottom: 30px;
       line-height: 1.2;
     }
-
     .about-text p {
       font-size: 14px;
       line-height: 2;
       opacity: 0.7;
       margin-bottom: 40px;
     }
-
     .profile-table { border-top: 1px solid rgba(26,26,26,0.12); }
-
     .profile-row {
       display: flex;
       justify-content: space-between;
@@ -209,7 +184,6 @@
       font-weight: 400;
       letter-spacing: 1px;
     }
-
     .profile-row span:first-child {
       opacity: 0.45;
       text-transform: uppercase;
@@ -217,14 +191,12 @@
       font-size: 10px;
       font-weight: 500;
     }
-
     /* Career / 경력 사항 */
     #career {
       max-width: 1200px;
       margin: 0 auto;
       padding: 120px 60px;
     }
-
     .career-heading {
       font-family: 'Cormorant Garamond', serif;
       font-size: 48px;
@@ -232,10 +204,8 @@
       line-height: 1.2;
       margin-bottom: 70px;
     }
-
     .career-category { margin-bottom: 60px; }
     .career-category:last-child { margin-bottom: 0; }
-
     .career-cat-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 24px;
@@ -245,7 +215,6 @@
       padding-bottom: 14px;
       border-bottom: 1px solid rgba(26,26,26,0.25);
     }
-
     .career-row {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -254,32 +223,27 @@
       padding: 16px 0;
       border-bottom: 1px solid rgba(26,26,26,0.1);
     }
-
     .career-title {
       font-size: 15px;
       font-weight: 500;
       letter-spacing: 0.5px;
     }
-
     .career-role {
       font-size: 13px;
       letter-spacing: 1px;
       opacity: 0.6;
       text-align: right;
     }
-
     /* Gallery */
     #gallery {
       max-width: 1200px;
       margin: 0 auto;
       padding: 120px 60px;
     }
-
     .gallery-main {
       width: 100%;
       margin-bottom: 16px;
     }
-
     .gallery-main img {
       width: 100%;
       aspect-ratio: 16/9;
@@ -288,21 +252,17 @@
       filter: sepia(5%);
       transition: filter 0.4s;
     }
-
     .gallery-main img:hover { filter: sepia(0%); }
-
     .gallery-sub {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
-
     .gallery-sub-item {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-
     .gallery-sub-item img {
       width: 100%;
       aspect-ratio: 2/3;
@@ -310,12 +270,10 @@
       filter: sepia(5%);
       transition: filter 0.4s, transform 0.4s;
     }
-
     .gallery-sub-item img:hover {
       filter: sepia(0%);
       transform: scale(1.02);
     }
-
     .gallery-sub-label {
       text-align: center;
       font-size: 10px;
@@ -324,28 +282,23 @@
       text-transform: uppercase;
       opacity: 0.45;
     }
-
     /* Videos */
     #videos {
       max-width: 1200px;
       margin: 0 auto;
       padding: 120px 60px;
     }
-
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
     }
-
     .video-item iframe {
       width: 100%;
       aspect-ratio: 16/9;
       border: none;
     }
-
     .video-info { margin-top: 16px; }
-
     .video-title {
       font-size: 13px;
       font-weight: 500;
@@ -353,13 +306,11 @@
       text-transform: uppercase;
       margin-bottom: 8px;
     }
-
     .video-desc {
       font-size: 13px;
       line-height: 1.8;
       opacity: 0.6;
     }
-
     /* Contact */
     #contact {
       max-width: 1200px;
@@ -367,7 +318,6 @@
       padding: 120px 60px;
       text-align: center;
     }
-
     #contact h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 56px;
@@ -375,7 +325,6 @@
       letter-spacing: 6px;
       margin-bottom: 20px;
     }
-
     #contact p {
       font-size: 12px;
       font-weight: 500;
@@ -383,7 +332,6 @@
       opacity: 0.45;
       margin-bottom: 50px;
     }
-
     .contact-email {
       font-family: 'Cormorant Garamond', serif;
       font-size: 26px;
@@ -395,9 +343,7 @@
       letter-spacing: 3px;
       transition: opacity 0.3s;
     }
-
     .contact-email:hover { opacity: 0.5; }
-
     footer {
       text-align: center;
       padding: 40px;
@@ -408,45 +354,36 @@
       text-transform: uppercase;
       border-top: 1px solid rgba(26,26,26,0.08);
     }
-
     .visitor-count { margin-top: 14px; }
-
     /* ========================
        모바일 반응형 (768px 이하)
     ======================== */
     @media (max-width: 768px) {
-
       /* 네비 */
       nav { padding: 24px 24px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-
       /* 히어로 */
       .hero-name {
         font-size: 42px;
         letter-spacing: 8px;
       }
-
       .hero-subtitle {
         font-size: 11px;
         letter-spacing: 4px;
       }
-
       /* About */
       #about {
         grid-template-columns: 1fr;
         gap: 40px;
         padding: 80px 24px;
       }
-
       .about-text h2 { font-size: 34px; }
       .about-text p { font-size: 13px; }
-
       /* Career */
       #career { padding: 80px 24px; }
       .career-heading { font-size: 34px; margin-bottom: 50px; }
       .career-cat-title { font-size: 20px; }
-
       .career-row {
         grid-template-columns: 1fr;
         gap: 4px;
@@ -455,71 +392,51 @@
         text-align: left;
         opacity: 0.5;
       }
-
       /* Gallery */
       #gallery { padding: 80px 24px; }
-
       .gallery-main img { aspect-ratio: 4/5; }
-
       .gallery-sub {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
       }
-
       /* Videos */
       #videos { padding: 80px 24px; }
-
       .video-grid {
         grid-template-columns: 1fr;
         gap: 50px;
       }
-
       /* Contact */
       #contact { padding: 80px 24px; }
-
       #contact h2 {
         font-size: 38px;
         letter-spacing: 4px;
       }
-
       .contact-email { font-size: 18px; }
     }
-
     /* 태블릿 (769px ~ 1024px) */
     @media (min-width: 769px) and (max-width: 1024px) {
-
       nav { padding: 26px 40px; }
-
       .hero-name {
         font-size: 60px;
         letter-spacing: 10px;
       }
-
       #about {
         gap: 50px;
         padding: 100px 40px;
       }
-
       .about-text h2 { font-size: 38px; }
-
       #career { padding: 100px 40px; }
-
       #gallery { padding: 100px 40px; }
-
       .gallery-sub { grid-template-columns: repeat(4, 1fr); }
-
       #videos {
         padding: 100px 40px;
       }
-
       .video-grid { gap: 30px; }
-
       #contact { padding: 100px 40px; }
     }
   </style>
 </head>
 <body>
-
   <!-- 네비게이션 -->
   <nav>
     <div class="logo">이현교</div>
@@ -534,7 +451,6 @@
       <span></span><span></span><span></span>
     </div>
   </nav>
-
   <!-- 모바일 메뉴 -->
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
@@ -544,7 +460,6 @@
     <a href="#videos" onclick="closeMenu()">Videos</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
   </div>
-
   <!-- 히어로 -->
   <section id="home">
     <div class="hero-bg"></div>
@@ -554,7 +469,6 @@
     </div>
     <p class="scroll-hint">scroll</p>
   </section>
-
   <!-- About -->
   <div id="about">
     <div class="about-image">
@@ -571,11 +485,15 @@
       </div>
     </div>
   </div>
+
+  <!-- Career / 경력 사항 -->
+  <!-- ▼ 규칙: 작품 한 개 = <div class="career-row">...</div> 한 덩어리. 복사해서 늘리고, 지워서 줄이세요.
+       카테고리(영화/기타)는 종류마다 <div class="career-category"> 하나씩만 둡니다. -->
   <div id="career">
     <p class="section-label">Career</p>
     <h2 class="career-heading">경력 사항</h2>
 
-    <영화></영화>
+    <!-- 영화 -->
     <div class="career-category">
       <h3 class="career-cat-title">Film · 영화</h3>
       <div class="career-list">
@@ -587,42 +505,32 @@
           <span class="career-title">단편영화 「좋아해줘」</span>
           <span class="career-role">주연 · 남자</span>
         </div>
-      </div>
-    </div><div class="career-row">
+        <div class="career-row">
           <span class="career-title">단편영화 「두유노」</span>
           <span class="career-role">조연 · 선생님1</span>
         </div>
-      </div>
-    </div>
-  </div><div class="career-row">
+        <div class="career-row">
           <span class="career-title">단편영화 「파니아」</span>
           <span class="career-role">조연 · 찬휘</span>
         </div>
       </div>
     </div>
 
-
-    <기타 (연극 · 광고 · 뮤직비디오 등) >
+    <!-- 기타 (연극 · 광고 · 뮤직비디오 등) -->
     <div class="career-category">
       <h3 class="career-cat-title">Etc · 기타</h3>
       <div class="career-list">
         <div class="career-row">
           <span class="career-title">연극 「가스등」</span>
           <span class="career-role">마닝함</span>
-        </div> <div class="career-category">
-      <h3 class="career-cat-title">Etc · 기타</h3>
-      <div class="career-list">
+        </div>
         <div class="career-row">
           <span class="career-title">연극 「405호 아줌마는 참 착하시다」</span>
           <span class="career-role">유지호</span>
-        </div> <div class="career-category">
-      <h3 class="career-cat-title">Etc · 기타</h3>
-      <div class="career-list">
+        </div>
         <div class="career-row">
           <span class="career-title">연극 「사의 찬미」</span>
           <span class="career-role">김우진</span>
-        </div>
-      
         </div>
       </div>
     </div>
@@ -649,7 +557,6 @@
       </div>
     </div>
   </div>
-
   <!-- Videos -->
   <div id="videos">
     <p class="section-label">Videos</p>
@@ -670,14 +577,12 @@
       </div>
     </div>
   </div>
-
   <!-- Contact -->
   <div id="contact">
     <p class="section-label">Contact</p>
-    <h2>함께 만들어요</h2>
+    <h2>감사합니다</h2>
     <p>casting · collaboration · inquiry</p>
     <a href="mailto:dlgusry77@naver.com" class="contact-email">dlgusry77@naver.com</a>
-
     <div style="margin-top: 30px;">
       <a href="https://www.instagram.com/kyo_zipp/" target="_blank" style="
         display: inline-flex;
@@ -701,13 +606,11 @@
       </a>
     </div>
   </div>
-
   <footer>
     <p>© 2026 이현교. All rights reserved.</p>
     <!-- 방문자 수 (숫자만 깔끔하게 표시) -->
     <p class="visitor-count">방문자 · <span id="visits">—</span></p>
   </footer>
-
   <script>
     function openMenu() {
       document.getElementById('mobileMenu').classList.add('open');
@@ -723,7 +626,6 @@
       }
     }
   </script>
-  <script async src="https://abacus.jasoncameron.dev/hit/dlgusry77-portfolieirdyyaaao58552/visits?callback=cb"></script>
-
+  <script async src="https://abacus.jasoncameron.dev/hit/dlgueesry77-portfolieirdyyaaao58552/visits?callback=cb"></script>
 </body>
 </html>
